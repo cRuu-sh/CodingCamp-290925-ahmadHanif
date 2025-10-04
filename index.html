@@ -11,29 +11,107 @@
     <title>RevoU To Do List</title>
   </head>
   <body>
+    <!-- Header -->
     <header>
-      <h1>To-do-list App</h1>
+      <div class="container-custom">
+        <h1>To-do-list App</h1>
+      </div>
     </header>
+
+    <!-- Main Content -->
     <main>
-      <h2>Form</h2>
-      <form action="">
-        <label for="tdl-input">To-do</label>
-        <input
-          type="text"
-          name="tdl-input"
-          id="tdl_input"
-          placeholder="Add tasks"
-        />
-        <br />
-        <label for="tdl-deadline">Deadline</label>
-        <input type="date" name="tdl-deadline" id="tdl_deadline" />
-        <br />
-        <button type="submit" value="submit">+</button>
-      </form>
+      <div class="container-custom">
+        <!-- Form Card -->
+        <div class="form-card">
+          <div class="card-header-custom">
+            <h2>Add New Task</h2>
+          </div>
+          <div class="card-body-custom">
+            <form action="">
+              <label for="tdl_input">To-do</label>
+              <input
+                type="text"
+                name="tdl-input"
+                id="tdl_input"
+                placeholder="Add tasks"
+                required
+              />
+
+              <label for="tdl_deadline">Deadline</label>
+              <input
+                type="date"
+                name="tdl-deadline"
+                id="tdl_deadline"
+                required
+              />
+
+              <button type="submit">
+                <span style="font-size: 1.25rem">+</span> Add Task
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Task List Card -->
+        <div class="task-card">
+          <div class="card-header-custom">
+            <h2 style="font-size: 1.125rem">Your Tasks</h2>
+          </div>
+
+          <!-- Sorting and Filtering Controls -->
+          <div
+            style="
+              padding: 1rem 1.5rem;
+              background: #f8f9fa;
+              border-bottom: 1px solid #dee2e6;
+            "
+          >
+            <div style="display: flex; gap: 10px; flex-wrap: wrap">
+              <select
+                id="filterSelect"
+                style="
+                  flex: 1;
+                  min-width: 150px;
+                  padding: 0.5rem;
+                  border: 1px solid #ced4da;
+                  border-radius: 0.375rem;
+                "
+              >
+                <option value="all">All Tasks</option>
+                <option value="active">Active Tasks</option>
+                <option value="completed">Completed Tasks</option>
+              </select>
+
+              <select
+                id="sortSelect"
+                style="
+                  flex: 1;
+                  min-width: 150px;
+                  padding: 0.5rem;
+                  border: 1px solid #ced4da;
+                  border-radius: 0.375rem;
+                "
+              >
+                <option value="dateAsc">Sort: Earliest Deadline</option>
+                <option value="dateDesc">Sort: Latest Deadline</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="taskListContainer">
+            <p>No tasks yet. Add your first task above!</p>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <!-- Footer -->
     <footer>
-      <p>Ahmad Hanif</p>
+      <div class="container-custom">
+        <p>Ahmad Hanif</p>
+      </div>
     </footer>
+
     <script src="js/script.js"></script>
   </body>
 </html>
